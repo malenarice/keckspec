@@ -16,4 +16,5 @@ Complete the following steps to get this model up and running on your computer:
 
 
 --- NOTES ---
+
 To obtain reliable results, the input fluxes MUST be reported at wavelength values that match up with those that were used to train our supervised learning algorithm. These wavelengths can be found in the folder examples/HD22072/wavelengths.txt along with example flux and inverse variance files. To support the user, we have provided an interpolation scheme that will convert spectra to this wavelength range.
