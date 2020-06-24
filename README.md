@@ -1,7 +1,7 @@
 
 --- DESCRIPTION ---
 
-This package is designed to output 18 stellar labels from input Keck HIRES spectra. The labels returned are Teff, logg, vsini, [Fe/H], [C/H], [N/H], [O/H], [Na/H], [Mg/H], [Al/H], [Si/H], [Ca/H], [Ti/H], [V/H], [Cr/H], [Mn/H], [Ni/H], and [Y/H]. The user inputs the fluxes and inverse variances at each wavelength value, and label estimates are outputted. 
+This program is designed to output 18 stellar labels from input Keck HIRES spectra. The labels returned are Teff, logg, vsini, [Fe/H], [C/H], [N/H], [O/H], [Na/H], [Mg/H], [Al/H], [Si/H], [Ca/H], [Ti/H], [V/H], [Cr/H], [Mn/H], [Ni/H], and [Y/H]. The user inputs the fluxes and inverse variances at each wavelength value, and label estimates are outputted. 
 
 
 --- GETTING STARTED ---
