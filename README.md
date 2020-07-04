@@ -7,9 +7,9 @@ This program is designed to output 18 stellar labels from input, continuum-norma
 
 Complete the following steps to get this model up and running on your computer:
 
-1. Download the GitHub repo at github.com/malenarice/keckspec
+1. Download the GitHub repo available here.
 
-2. Navigate to astro.yale.edu/malenarice/keckspec to download the trained model file spocstrained_post2004.model. This file is 1.33 GB and contains the saved model. Move this file into the "keckspec" folder downloaded from Github.
+2. Navigate to [this link](www.astro.yale.edu/malenarice/keckspec) to download the trained model file spocstrained_post2004.model. This file is 1.33 GB and contains the saved model. Move this file into the "keckspec" folder downloaded from Github.
 
 3. Run the return_labels function in run_trainedmodel_keck_post2004.py with your input spectra. The two inputs required are normalized flux and inverse variances, and the code will output a .csv file called "stellar_labels.csv" containing the predicted stellar labels.
 
