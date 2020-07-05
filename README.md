@@ -9,7 +9,7 @@ Complete the following steps to get this model up and running on your computer:
 
 1. Download the GitHub repo available at this site.
 
-2. Navigate to [this link](www.astro.yale.edu/malenarice/keckspec) to download the trained model file spocstrained_post2004.model. This file is 1.33 GB and contains the saved model. Move this file into the "keckspec" folder downloaded from Github.
+2. Navigate to [this link](https://www.astro.yale.edu/malenarice/#keckspec) to download the trained model file spocstrained_post2004.model. This file is 1.33 GB and contains the saved model. Move this file into the "keckspec" folder downloaded from Github.
 
 3. Run the return_labels function in run_trainedmodel_keck_post2004.py with your input spectra. The two inputs required are normalized flux and inverse variances, and the code will output a .csv file called "stellar_labels.csv" containing the predicted stellar labels.
 
@@ -38,7 +38,7 @@ This program will output a file called 'stellar_labels.csv' that includes the ou
 
 The previous example assumed that your input spectra are already continuum-normalized and interpolated to the correct wavelength values. But what if they aren't?
 
-In the example below, we determine stellar labels from a raw extracted HIRES spectrum, with each step included for clarity. Note that, for the continuum renormalization described in this section, you will also need to download the trained model file spocstrained_post2004_notelluricmask.model at [this link](www.astro.yale.edu/malenarice/keckspec).
+In the example below, we determine stellar labels from a raw extracted HIRES spectrum, with each step included for clarity. Note that, for the continuum renormalization described in this section, you will also need to download the trained model file spocstrained_post2004_notelluricmask.model at [this link](https://www.astro.yale.edu/malenarice/#keckspec).
 
 
 ```python
