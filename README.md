@@ -55,7 +55,6 @@ sigma = np.loadtxt(example_folder_path + "sigma_HD22072_raw.txt")
 # Load the continuum fit to normalize each order of your spectrum 
 cont = np.loadtxt(example_folder_path + "continuum_HD22072_raw.txt")
 
-
 # Interpolate wavelengths to match the wavelengths.txt file listed 
 # in "examples/HD22072". This function also normalizes the flux and 
 # extracts the uncertainty for the interpolated wavelengths.
@@ -82,8 +81,7 @@ ivar_renorm_interp_flat = 1./(sigma_renorm_interp_flat**2.)
 # Provide the star's name (optional)
 star_names = np.array(['HD 22072'])
 
-print(flux_renorm_interp_flat, ivar_renorm_interp_flat)
-print(np.shape(flux_renorm_interp_flat), np.shape(ivar_renorm_interp_flat))
+# Return labels
 return_labels(flux_renorm_interp_flat, ivar_renorm_interp_flat, star_names=star_names)
 ```
 
