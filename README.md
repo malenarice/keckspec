@@ -9,9 +9,12 @@ Complete the following steps to get this model up and running on your computer:
 
 1. Download the GitHub repo available at this site.
 
-2. Navigate to www.astro.yale.edu/malenarice/#keckspec to download the trained model file spocstrained_post2004.model. This file is 1.33 GB and contains the saved model. Move this file into the "keckspec" folder downloaded from Github.
+2. Make sure that you have an updated installation of The Cannon on your computer. Instructions for this installation can be found at https://github.com/andycasey/AnniesLasso.
 
-3. Run the return_labels function in run_trainedmodel_keck_post2004.py with your input spectra. The two inputs required are normalized flux and inverse variances, and the code will output a .csv file called "stellar_labels.csv" containing the predicted stellar labels.
+3. Navigate to www.astro.yale.edu/malenarice/#keckspec to download the trained model file spocstrained_post2004.model. This file is 1.33 GB and contains the saved model. Move this file into the "keckspec" folder downloaded from Github.
+
+4. Run the return_labels function in run_trainedmodel_keck_post2004.py with your input spectra. The two inputs required are normalized flux and inverse variances, and the code will output a .csv file called "stellar_labels.csv" containing the predicted stellar labels.
+
 
 
 Below is a simple example label extraction for the star HD 22072, with all required files located in the 'examples' folder.
