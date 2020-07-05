@@ -1,6 +1,9 @@
 import numpy as np
 import pandas as pd
 import thecannon as tc
+import time
+from scipy.interpolate import interp1d
+import scipy.signal
 
 def return_labels(normalized_flux, normalized_ivar,
                   save_file=True, star_names=None,
@@ -26,7 +29,7 @@ def return_labels(normalized_flux, normalized_ivar,
     #     or just return labels as an array
     # star_names (optional):
     #   - Default: None
-    #   - Provide star names for easier
+    #   - Provide an array of star names for easier
     #     readability of code outputs
     # save_dir (optional):
     #   - Default: Saves file in current directory
@@ -35,12 +38,13 @@ def return_labels(normalized_flux, normalized_ivar,
     #
     #
     # OUTPUTS:
-    #   - labels: results as a Pandas dataframe
+    # df_results:
+    #   - labels as a Pandas dataframe
     #     with size (number of stars, 18) where
     #     there are 18 labels returned
-    #   - If save_file == True:
-    #       -> Saved .csv file providing results
-    #          with size (number of stars, 18)
+    # ** If save_file == True:
+    #    -> Saved .csv file providing results
+    #       with size (number of stars, 18)
     #
     #
     # NOTES:
@@ -64,24 +68,30 @@ def return_labels(normalized_flux, normalized_ivar,
     model = tc.CannonModel.read("spocstrained_post2004.model")
 
     # Label names provided in the order that will be outputted by this code
-    label_names = ["TEFF", "LOGG", "VSINI", "FeH", "CH", "NH", "OH", "NaH",
-         "MgH", "AlH", "SiH", "CaH", "TiH", "VH", "CrH", "MnH", "NiH", "YH"]
+    label_names = ["TEFF", "LOGG", "VSINI", "CH", "NH", "OH", "NaH", "MgH",
+        "AlH", "SiH", "CaH", "TiH", "VH", "CrH", "MnH", "FeH", "NiH", "YH"]
+
+    # Keep track of how long program takes to run
+    start_time = time.time()
 
     # Return labels for input dataset
     labels, cov, metadata = model.test(normalized_flux, normalized_ivar)
+    time_elapsed = time.time() - start_time
+
+    # Print time taken to extract labels
+    if normalized_flux.ndim == 1:
+        print("%s seconds to label 1 star" %(time_elapsed))
+    elif normalized_flux.ndim == 2:
+        print("%s seconds to label %s stars" %(time_elapsed, len(normalized_flux)))
+    else:
+        print("%s seconds to label stars (WARNING: dimensionality of input fluxes not recognized)" %(time_elapsed))
 
     # Put results in a dataframe for easier readability
     df_results = pd.DataFrame(labels, columns=label_names, index=star_names)
 
     # Save results
     if save_file == True:
+        print("Saving...")
         df_results.to_csv(save_dir+'stellar_labels.csv')
 
     return df_results
-
-
-initfiles_dir = '../post-2004/runs_allorders/finalruns_paper/final_combined_run/'
-
-normalized_flux = np.loadtxt(initfiles_dir+'fluxes_contdiv_polynomial_all.txt')
-normalized_ivar = np.loadtxt(initfiles_dir+'ivar_contdiv_polynomial_all.txt')
-star_names = np.loadtxt('star_names.txt', delimiter='/t', dtype='str')
