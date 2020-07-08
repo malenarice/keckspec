@@ -89,7 +89,7 @@ return_labels(flux_renorm_interp_flat, ivar_renorm_interp_flat, star_names=star_
 ```
 
 ## Acknowledgement
-If you use this code for your own research or would otherwise like to acknowledge it, we ask that you cite the associated paper Rice & Brewer 2020.
+If you use this code for your own research or would otherwise like to acknowledge it, we ask that you cite the associated paper Rice & Brewer 2020 (https://arxiv.org/abs/2007.02942).
 
 
 ## Notes
