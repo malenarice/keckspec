@@ -94,4 +94,4 @@ def return_labels(normalized_flux, normalized_ivar,
         print("Saving...")
         df_results.to_csv(save_dir+'stellar_labels.csv')
 
-    return df_results
+    return df_results, metadata
